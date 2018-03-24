@@ -1,0 +1,44 @@
+@light: 300;
+@normal: 400;
+@bold: 700;
+@black: 900;
+
+@basefont: 1;
+@font-size: @basefont +0em;
+@font-family: "gotham", "Helvetica Neue", Helvetica,Arial,sans-serif;
+
+@font-face {
+    font-family: 'gotham';
+    src: url('fonts/gothamrounded-bold.woff2') format('woff2'),
+    url('fonts/gothamrounded-bold.woff') format('woff');
+    font-weight: @bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gotham';
+    src: url('fonts/gothamrounded-light.woff2') format('woff2'),
+    url('fonts/gothamrounded-light.woff') format('woff');
+    font-weight: @light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gotham';
+    src: url('fonts/gothamrounded-medium.woff2') format('woff2'),
+    url('fonts/gothamrounded-medium.woff') format('woff');
+    font-weight: @normal;
+    font-style: normal;
+}
+
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+body { 
+    font-size: @font-size;
+    font-family: @font-family; 
+    font-weight: @normal; 
+    color: @main-color;
+}
