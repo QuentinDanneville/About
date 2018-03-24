@@ -1,6 +1,7 @@
 # Application About
 
 Project owner : Laurene Filatriau
+
 Developed by : Quentin Danneville
 
 Description Project : TODO
