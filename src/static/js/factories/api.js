@@ -1,7 +1,7 @@
 export default function(module) {
-	module.factory('ApiFactory', ['$http', 'GrowlFactory', ApiFactory]);
+	module.factory('ApiFactory', ['$http', ApiFactory]);
 
-	function ApiFactory($http, GrowlFactory) {
+	function ApiFactory($http) {
 		var returned = {
 			values: {},
 			actions: {}
@@ -19,11 +19,6 @@ export default function(module) {
 			if(config.url.slice(-1) != '/')
 				config.url += '/';
 
-			return $http(config).catch(err => {
-				_.forEach(err.data.__all__, err => {
-					GrowlFactory.alert(err);
-				});
-			});
 		}
 
 		return returned;

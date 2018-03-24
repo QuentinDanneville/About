@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/QuentinDanneville/About#readme",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-ui-router-default": "0.0.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",

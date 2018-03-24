@@ -8,10 +8,12 @@ function config($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) 
             url: '/',
             views: {
                 "bodyView@": {
-                    template: "Bienvenue sur l'index les potos", //Temporary
+                    template: "About index", //Temporary
+                    controller: 'ContentController',
+                    controllerAs: 'Content'
                 }
             }
-        })
+        });
         
-    // $urlRouterProvider.otherwise('/'); //Temp
+    $urlRouterProvider.otherwise('/'); //Temp
 }
