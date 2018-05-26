@@ -8,9 +8,9 @@ function config($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) 
             url: '/',
             views: {
                 "bodyView@": {
-                    template: "About index", //Temporary
-                    controller: 'ContentController',
-                    controllerAs: 'Content'
+                    templateUrl: 'map.html',
+                    controller: 'MapController',
+                    controllerAs: 'Map'
                 }
             }
         });

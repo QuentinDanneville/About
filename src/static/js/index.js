@@ -6,8 +6,11 @@ import 'angular-ui-router-default';
 
 import 'angular-animate';
 
+//leaflet 
+import 'leaflet'
+
 var module = angular
-	.module('about', ['ngAnimate', 'ui.router', 'ui.router.default',]);
+	.module('about', ['ngAnimate', 'ui.router', 'ui.router.default']);
 
 import Config from './config'
 Config(module);

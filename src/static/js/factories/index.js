@@ -1,7 +1,7 @@
 import Api from './api';
-import Content from './content';
+import Map from './map';
 
 export default function(angular) {
 	Api(angular);
-	Content(angular);
+	Map(angular);
 }

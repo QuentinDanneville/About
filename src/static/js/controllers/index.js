@@ -1,5 +1,5 @@
-import Content from './content';
+import Map from './map';
 
 export default function(angular) {
-	Content(angular);
+	Map(angular);
 }
