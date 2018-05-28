@@ -8,6 +8,7 @@ import 'angular-animate';
 
 //leaflet 
 import 'leaflet'
+import 'leaflet-rastercoords'
 
 var module = angular
 	.module('about', ['ngAnimate', 'ui.router', 'ui.router.default']);
