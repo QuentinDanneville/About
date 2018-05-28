@@ -4,16 +4,26 @@ export default function(module) {
 
 function config($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {
     $stateProvider
-        .state('home', {
-            url: '/',
-            views: {
-                "bodyView@": {
-                    templateUrl: 'map.html',
-                    controller: 'MapController',
-                    controllerAs: 'Map'
-                }
+    .state('prealoder', {
+        url: '/preloader',
+        views: {
+            "bodyView@": {
+                templateUrl: 'preloader.html',
+                controller: 'PreloaderController',
+                controllerAs: 'Preloader'
             }
-        });
-        
+        }
+    })
+    .state('home', {
+        url: '/',
+        views: {
+            "bodyView@": {
+                templateUrl: 'map.html',
+                controller: 'MapController',
+                controllerAs: 'Map'
+            }
+        }
+    });
+    
     $urlRouterProvider.otherwise('/'); //Temp
 }
