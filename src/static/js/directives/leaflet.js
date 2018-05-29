@@ -10,7 +10,8 @@ export default function(module) {
 					maxZoom: 4,
 					center: [0, 0],
 					zoom: 1,
-					crs: L.CRS.Simple
+					crs: L.CRS.Simple,
+					zoomControl: false
 				  });
 				  // dimensions of the image
 				  var w = 4998,
