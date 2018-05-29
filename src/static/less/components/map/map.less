@@ -78,11 +78,79 @@
     }
 }
 
+.logo-about {
+    position: absolute;
+
+    top: 15px;
+    left: 25px;
+
+    z-index: 10000000;
+
+    width: 150px;
+
+    opacity: 0;
+    transform: translate3d(0,-100%,0);
+
+    animation: ui-appear 1s ease forwards;
+    animation-delay : 3.5s;
+    
+}
+
+.nav-bar {
+    position: absolute;
+
+    top: 15px;
+    right: 25px;
+
+    z-index: 10000;
+
+    animation: ui-appear 1s ease forwards;
+    animation-delay : 3.5s;
+
+
+    ul {
+        li {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+
+            +li {
+                &:before {
+                    content: '';
+                    color: white;
+                    position: absolute;
+    
+                    width: 5px;
+                    height: 5px;
+    
+                    background-color: #fff;
+                    border-radius: 50%;
+    
+                    top: 50%;
+                    transform: translate3d(-15px,-50%,0);
+                }
+            }
+            
+        }
+    }
+}
+
 @keyframes map-state-appear {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes ui-appear {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-100%,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
     }
 }
