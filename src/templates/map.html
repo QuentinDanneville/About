@@ -39,10 +39,10 @@
 </div>
 <div class="nav-bar">
     <ul>
-        <li><a class="zoom-in" href="#"><img src="../static/images/navs/zoom-in.png"></a></li>
-        <li><a class="zoom-out" href="#"><img src="../static/images/navs/zoom-out.png"></a></li>
+        <li><a class="zoom-in"><img src="../static/images/navs/zoom-in.png"></a></li>
+        <li><a class="zoom-out"><img src="../static/images/navs/zoom-out.png"></a></li>
         <li><img src="../static/images/navs/empty.png"></li>
-        <li><img src="../static/images/navs/loop.png"></li>
+        <li><a ng-click="Map.toggleSearch()"><img src="../static/images/navs/loop.png"></a></li>
         <li><a ng-click="Map.toggleModal('login')"><img src="../static/images/navs/profile.png"></a></li>
         <li><a ng-click="Map.toggleModal('about')"><img src="../static/images/navs/help.png"></a></li>
     </ul>
@@ -176,4 +176,10 @@
                 <h1>Bonjour login modal</h1>
         </div>
     </div>
+</div>
+
+<div class="search-wrapper" ng-show="Map.showSearch">
+    <a ng-click="Map.toggleSearch()" class="close-modal-wrapper"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve" width="24" height="24"><g class="nc-icon-wrapper" fill="#000000"><path fill="#000000" d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"></path></g></svg></a>
+    <p>Taper un mot ou un groupe de mot pour filtrer les articles.</p>
+    <input type="text" placeholder="Exemple : Lutte sociale">
 </div>

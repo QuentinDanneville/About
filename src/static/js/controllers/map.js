@@ -7,6 +7,7 @@ export default function(module) {
 
 		vm.showMapState = true;
 		vm.modalIsVisible = false;
+		vm.showSearch = false;
 		vm.modal = '';
 
 		vm.CF = MapFactory;
@@ -20,6 +21,10 @@ export default function(module) {
 
 		function hideMap() {
 			vm.showMapState = false;
+		}
+
+		vm.toggleSearch = () => {
+			vm.showSearch = !vm.showSearch;
 		}
 
 		vm.toggleModal = (modal) => {
