@@ -39,12 +39,12 @@
 </div>
 <div class="nav-bar">
     <ul>
-        <li><img src="../static/images/navs/zoom-in.png"></li>
-        <li><img src="../static/images/navs/zoom-out.png"></li>
+        <li><a class="zoom-in" href="#"><img src="../static/images/navs/zoom-in.png"></a></li>
+        <li><a class="zoom-out" href="#"><img src="../static/images/navs/zoom-out.png"></a></li>
         <li><img src="../static/images/navs/empty.png"></li>
         <li><img src="../static/images/navs/loop.png"></li>
-        <li><img src="../static/images/navs/profile.png"></li>
-        <li><img src="../static/images/navs/help.png"></li>
+        <li><a ng-click="Map.toggleModal('login')"><img src="../static/images/navs/profile.png"></a></li>
+        <li><a ng-click="Map.toggleModal('about')"><img src="../static/images/navs/help.png"></a></li>
     </ul>
 </div>
 <div ng-show="!Map.showMapState" leaflet id="map" class="fade">
