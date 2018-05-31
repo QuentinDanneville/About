@@ -1,0 +1,49 @@
+.modal-wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    
+    top: 0;
+    left: 0;
+    
+    
+    z-index: 10000;
+    overflow: hidden;
+    
+    .modal-inner {
+        position: relative;
+        background-color: white;
+
+        top: 10vh;
+        left: 15vw;
+    
+        width: 70vw;
+        height: 90vh;
+    }
+}
+
+.close-modal-wrapper {
+    position: absolute;
+    
+    top: 15px;
+    right: 15px;
+    
+    transition: transform 0.3s ease;
+    
+    cursor: pointer;
+    
+    &:hover {
+        transform: rotate(45deg);
+    }
+    
+}
+
+.modal-wrapper.ng-hide {
+    transform:translate3d(0,100%,0);
+    opacity: 1;
+}
+
+.modal-wrapper.ng-hide-add,
+.modal-wrapper.ng-hide-remove {
+    transition: all cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.5s;
+}
