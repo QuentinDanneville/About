@@ -7,6 +7,19 @@ export default function(module) {
 			actions: {}
 		};
 
+
+		returned.values.pins = null;
+		returned.actions.init = init;
+
+		function init() {
+			return ApiFactory.api({
+				url: 'pin/'
+			})
+			.then(response => {
+				returned.values.pins = response.data
+			})
+		}
+
 		return returned;
 	};
 }

@@ -8,7 +8,7 @@ export default function(module) {
 		};
 
 		returned.api = api;
-		returned.values.apiPath = '/api/v1/';
+		returned.values.apiPath = 'http://127.0.0.1:8003/api/';
 
 		function api(config) {
 			if(!config.url)
@@ -19,6 +19,9 @@ export default function(module) {
 			if(config.url.slice(-1) != '/')
 				config.url += '/';
 
+				return $http(config).catch(err => {
+					console.log(err);
+				});
 		}
 
 		return returned;

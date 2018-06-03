@@ -22,7 +22,10 @@ function config($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) 
                 controller: 'MapController',
                 controllerAs: 'Map'
             }
-        }
+        },
+        resolve: {
+            init: MapFactory =>  MapFactory.actions.init()
+        },
     });
     
     $urlRouterProvider.otherwise('/'); //Temp
