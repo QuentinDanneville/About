@@ -30,5 +30,5 @@ class PinSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Pin
-        fields = ('id', 'article', 'name', 'pos_x', 'pos_y', 'visible',)
-        read_only_fields = ('id', 'article', 'name', 'pos_x', 'pos_y', 'visible',)
+        fields = ('id', 'article', 'name', 'pos_x', 'pos_y', 'visible','map_media')
+        read_only_fields = ('id', 'article', 'name', 'pos_x', 'pos_y', 'visible','map_media')

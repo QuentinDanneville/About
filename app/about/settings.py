@@ -25,7 +25,7 @@ SECRET_KEY = 'qiqv&7q_!e-8s0u0b6=6is0&d!$@&^j1bk@f%olc3a&g-v&^10'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'http://localhost:8080/']
 
 
 # Application definition
@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     'content',
     'rest_framework',
+    'ckeditor',
+    'ckeditor_uploader',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'about.urls'
@@ -69,6 +74,13 @@ TEMPLATES = [
         },
     },
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'google.com',
+    'hostname.example.com',
+    'localhost:8080',
+    '127.0.0.1:8003'
+)
 
 WSGI_APPLICATION = 'about.wsgi.application'
 
@@ -120,7 +132,52 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/stadm/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "../public/stadm")
+
+MEDIA_ROOT = 'media/'
 
 MEDIA_URL = '/media/'
+
+
+CKEDITOR_CONFIGS = {
+    'default':
+        {
+            'skin': 'moono',
+            'toolbar_Basic': [
+                ['Source', '-', 'Bold', 'Italic']
+            ],
+            'toolbar_Full': [
+                ['Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+                ['Link', 'Unlink', 'Anchor'],
+                ['Image', 'Table', 'HorizontalRule'],
+                ['TextColor', 'BGColor'],
+                ['Smiley', 'SpecialChar'], ['Source'],
+            ],
+            'toolbar': 'Full',
+            'height': 291,
+            'width': 835,
+            'filebrowserWindowWidth': 940,
+            'filebrowserWindowHeight': 725,
+            'extraPlugins': ','.join(
+            [
+                # your extra plugins here
+                'div',
+                'autolink',
+                'autoembed',
+                'embedsemantic',
+                'autogrow',
+                # 'devtools',
+                'widget',
+                'lineutils',
+                'clipboard',
+                'dialog',
+                'dialogui',
+                'elementspath',
+                'image2',
+            ]),
+        }
+    }
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
