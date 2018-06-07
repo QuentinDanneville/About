@@ -25,6 +25,8 @@ class Article(models.Model):
     subtitle = models.CharField("Sous titre", max_length=255, null=True, blank=True)
     theme = models.CharField("Theme", max_length=255, null=True, blank=True)
     article_date = models.CharField("Sous titre", max_length=255, null=True, blank=True)
+    author = models.CharField("Auteur", max_length=255, null=True, blank=True)
+    poster = models.CharField("Affichiste", max_length=255, null=True, blank=True)
     slug = models.SlugField("URL accès à l'artcle", unique=True)
     content = RichTextField()
     media = models.FileField(upload_to="medias")
